@@ -1,11 +1,9 @@
 import json
 import os
-from time import time
-from sys import argv
 from os.path import getmtime
-from zipfile import ZipFile, ZIP_DEFLATED
+from zipfile import ZipFile
 
-DOWNLOAD_URL = 'https://github.com/daemitus/MyDalamudPlugins/raw/master/plugins/{plugin_name}/latest.zip'
+DOWNLOAD_URL = 'https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/plugins/{plugin_name}/latest.zip'
 
 DEFAULTS = {
     'IsHide': False,
@@ -48,13 +46,15 @@ def main():
 def extract_manifests():
     manifests = []
 
-    for dirpath, dirnames, filenames in os.walk('./plugins'):
+    for dirpath, dirnames, filenames in os.walk(f'.{os.path.sep}plugins'):
+        print(dirpath)
         if len(filenames) == 0 or 'latest.zip' not in filenames:
             continue
-        plugin_name = dirpath.split('/')[-1]
-        latest_zip = f'{dirpath}/latest.zip'
+        plugin_name = os.path.split(dirpath)[-1]
+        latest_zip = f'{dirpath}{os.path.sep}latest.zip'
+        print(plugin_name)
         with ZipFile(latest_zip) as z:
-            manifest = json.loads(z.read(f'{plugin_name}.json').decode('utf-8'))
+            manifest = json.loads(z.read(f'{plugin_name}.json').decode('utf-8-sig'))
             manifests.append(manifest)
 
     return manifests
@@ -87,7 +87,7 @@ def last_updated():
         master = json.load(f)
 
     for plugin in master:
-        latest = f'plugins/{plugin["InternalName"]}/latest.zip'
+        latest = f'plugins{os.path.sep}{plugin["InternalName"]}{os.path.sep}latest.zip'
         modified = int(getmtime(latest))
 
         if 'LastUpdated' not in plugin or modified != int(plugin['LastUpdated']):
