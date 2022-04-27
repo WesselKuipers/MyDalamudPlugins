@@ -2,9 +2,9 @@
     {
         "Author": "CFG",
         "Name": "FC Name Color",
-        "Description": "Color your FC's tag or the entire nameplate if they are in your FC. Use /fcnc to open up the config.",
+        "Description": "Color your FC\u2019s tag or the entire nameplate if they are in your FC. Use /fcnc to open up the config.",
         "InternalName": "FCNameColor",
-        "AssemblyVersion": "1.0.2.4",
+        "AssemblyVersion": "2.1.0.4",
         "RepoUrl": "https://github.com/WesselKuipers/FCNameColor",
         "ApplicableVersion": "any",
         "Tags": [
@@ -13,13 +13,13 @@
             "name",
             "colors"
         ],
-        "DalamudApiLevel": 3,
+        "DalamudApiLevel": 6,
         "DownloadLinkInstall": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/plugins/FCNameColor/latest.zip",
         "IsHide": false,
         "IsTestingExclusive": false,
         "DownloadLinkTesting": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/plugins/FCNameColor/latest.zip",
         "DownloadLinkUpdate": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/plugins/FCNameColor/latest.zip",
         "DownloadCount": 0,
-        "LastUpdated": "1629751562"
+        "LastUpdated": "1651072050"
     }
 ]
