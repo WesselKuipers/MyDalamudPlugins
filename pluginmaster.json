@@ -2,9 +2,9 @@
     {
         "Author": "CFG",
         "Name": "FC Name Color",
-        "Description": "Color your FC\u2019s tag or the entire nameplate if they are in your FC. Use /fcnc to open up the config.",
+        "Description": "Color your FC\u2019s tag or the entire nameplate if they are in your FC or other specified FCs.\nWorks using Lodestone data, so it can continue working inside duties as well as on different servers!",
         "InternalName": "FCNameColor",
-        "AssemblyVersion": "2.1.0.4",
+        "AssemblyVersion": "2.1.0.5",
         "RepoUrl": "https://github.com/WesselKuipers/FCNameColor",
         "ApplicableVersion": "any",
         "Tags": [
@@ -20,6 +20,6 @@
         "DownloadLinkTesting": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/plugins/FCNameColor/latest.zip",
         "DownloadLinkUpdate": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/plugins/FCNameColor/latest.zip",
         "DownloadCount": 0,
-        "LastUpdated": "1651144922"
+        "LastUpdated": "1651435820"
     }
 ]
