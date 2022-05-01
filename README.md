@@ -1,3 +1,6 @@
 CFG's Dalamud Plugins
 
-Drop `https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/pluginmaster.json` into your third party repo URL list.
+Drop the URL below into your third party repo URL list.
+```
+https://github.com/WesselKuipers/MyDalamudPlugins/raw/main/pluginmaster.json
+```
