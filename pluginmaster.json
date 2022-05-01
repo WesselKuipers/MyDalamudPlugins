@@ -2,6 +2,7 @@
     {
         "Author": "CFG",
         "Name": "FC Name Color",
+        "Punchline": "Color your FC member\u2019s FC tags",
         "Description": "Color your FC\u2019s tag or the entire nameplate if they are in your FC or other specified FCs.\nWorks using Lodestone data, so it can continue working inside duties as well as on different servers!",
         "InternalName": "FCNameColor",
         "AssemblyVersion": "2.1.0.5",
@@ -14,12 +15,14 @@
             "colors"
         ],
         "DalamudApiLevel": 6,
-        "DownloadLinkInstall": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/plugins/FCNameColor/latest.zip",
+        "LoadPriority": -1,
+        "IconUrl": "https://github.com/WesselKuipers/FCNameColor/raw/main/images/icon.png",
+        "DownloadLinkInstall": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/main/plugins/FCNameColor/latest.zip",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "DownloadLinkTesting": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/plugins/FCNameColor/latest.zip",
-        "DownloadLinkUpdate": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/plugins/FCNameColor/latest.zip",
+        "DownloadLinkTesting": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/main/plugins/FCNameColor/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/main/plugins/FCNameColor/latest.zip",
         "DownloadCount": 0,
-        "LastUpdated": "1651435820"
+        "LastUpdate": "1651436200"
     }
 ]

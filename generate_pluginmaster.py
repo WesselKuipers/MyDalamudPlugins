@@ -3,7 +3,8 @@ import os
 from os.path import getmtime
 from zipfile import ZipFile
 
-DOWNLOAD_URL = 'https://github.com/WesselKuipers/MyDalamudPlugins/raw/master/plugins/{plugin_name}/latest.zip'
+BRANCH = os.environ.get('GITHUB_REF', 'main').split('refs/heads/')[-1]
+DOWNLOAD_URL = 'https://github.com/WesselKuipers/MyDalamudPlugins/raw/{branch}/plugins/{plugin_name}/latest.zip'
 
 DEFAULTS = {
     'IsHide': False,
@@ -18,13 +19,18 @@ DUPLICATES = {
 TRIMMED_KEYS = [
     'Author',
     'Name',
+    'Punchline',
     'Description',
+    'Changelog',
     'InternalName',
     'AssemblyVersion',
     'RepoUrl',
     'ApplicableVersion',
     'Tags',
     'DalamudApiLevel',
+    'LoadPriority',
+    'IconUrl',
+    'ImageUrls',
 ]
 
 def main():
@@ -46,15 +52,13 @@ def main():
 def extract_manifests():
     manifests = []
 
-    for dirpath, dirnames, filenames in os.walk(f'.{os.path.sep}plugins'):
-        print(dirpath)
+    for dirpath, dirnames, filenames in os.walk('./plugins'):
         if len(filenames) == 0 or 'latest.zip' not in filenames:
             continue
         plugin_name = os.path.split(dirpath)[-1]
         latest_zip = f'{dirpath}{os.path.sep}latest.zip'
-        print(plugin_name)
         with ZipFile(latest_zip) as z:
-            manifest = json.loads(z.read(f'{plugin_name}.json').decode('utf-8-sig'))
+            manifest = json.loads(z.read(f'{plugin_name}.json').decode('utf-8'))
             manifests.append(manifest)
 
     return manifests
@@ -62,7 +66,7 @@ def extract_manifests():
 def add_extra_fields(manifests):
     for manifest in manifests:
         # generate the download link from the internal assembly name
-        manifest['DownloadLinkInstall'] = DOWNLOAD_URL.format(plugin_name=manifest["InternalName"])
+        manifest['DownloadLinkInstall'] = DOWNLOAD_URL.format(branch=BRANCH, plugin_name=manifest["InternalName"])
         # add default values if missing
         for k, v in DEFAULTS.items():
             if k not in manifest:
@@ -90,8 +94,8 @@ def last_updated():
         latest = f'plugins{os.path.sep}{plugin["InternalName"]}{os.path.sep}latest.zip'
         modified = int(getmtime(latest))
 
-        if 'LastUpdated' not in plugin or modified != int(plugin['LastUpdated']):
-            plugin['LastUpdated'] = str(modified)
+        if 'LastUpdate' not in plugin or modified != int(plugin['LastUpdate']):
+            plugin['LastUpdate'] = str(modified)
 
     with open('pluginmaster.json', 'w') as f:
         json.dump(master, f, indent=4)
