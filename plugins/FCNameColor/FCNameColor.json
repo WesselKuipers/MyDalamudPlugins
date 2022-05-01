@@ -1,4 +1,4 @@
-{
+﻿{
   "Author": "CFG",
   "Name": "FC Name Color",
   "InternalName": "FCNameColor",
@@ -17,7 +17,7 @@
     "social"
   ],
   "DalamudApiLevel": 6,
-  "LoadPriority": -1,
+  "LoadPriority": 1,
   "IconUrl": "https://github.com/WesselKuipers/FCNameColor/raw/main/images/icon.png",
   "Punchline": "Color your FC member’s FC tags"
 }
