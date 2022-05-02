@@ -5,7 +5,7 @@
         "Punchline": "Color your FC member\u2019s FC tags",
         "Description": "Color your FC\u2019s tag or the entire nameplate if they are in your FC or other specified FCs.\nWorks using Lodestone data, so it can continue working inside duties as well as on different servers!",
         "InternalName": "FCNameColor",
-        "AssemblyVersion": "2.1.0.5",
+        "AssemblyVersion": "2.1.0.6",
         "RepoUrl": "https://github.com/WesselKuipers/FCNameColor",
         "ApplicableVersion": "any",
         "Tags": [
@@ -15,7 +15,7 @@
             "colors"
         ],
         "DalamudApiLevel": 6,
-        "LoadPriority": 1,
+        "LoadPriority": 0,
         "IconUrl": "https://github.com/WesselKuipers/FCNameColor/raw/main/images/icon.png",
         "DownloadLinkInstall": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/main/plugins/FCNameColor/latest.zip",
         "IsHide": false,
@@ -23,6 +23,6 @@
         "DownloadLinkTesting": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/main/plugins/FCNameColor/latest.zip",
         "DownloadLinkUpdate": "https://github.com/WesselKuipers/MyDalamudPlugins/raw/main/plugins/FCNameColor/latest.zip",
         "DownloadCount": 0,
-        "LastUpdate": "1651436200"
+        "LastUpdate": "1651451829"
     }
 ]
